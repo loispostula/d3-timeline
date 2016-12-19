@@ -35,6 +35,11 @@ rect.interval.blue-interval {
     stroke: blue;
 }
 
+rect.interval.red-interval {
+    fill: red;
+    stroke: red;
+}
+
 circle.blue-dot {
     fill: blue;
 }

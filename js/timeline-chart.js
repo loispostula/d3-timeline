@@ -10,6 +10,7 @@ class TimelineChart {
 
         let minDt = d3.min(allElements, this.getPointMinDt);
         let maxDt = d3.max(allElements, this.getPointMaxDt);
+        console.log(allElements);
 
         let elementWidth = options.width || element.clientWidth;
         let elementHeight = options.height || element.clientHeight;
@@ -181,6 +182,7 @@ class TimelineChart {
 
         function zoomed() {
             if (self.onVizChangeFn && d3.event) {
+                console.log('here');
                 self.onVizChangeFn.call(self, {
                     scale: d3.event.scale,
                     translate: d3.event.translate,

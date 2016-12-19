@@ -53,6 +53,7 @@
 
             var minDt = d3.min(allElements, this.getPointMinDt);
             var maxDt = d3.max(allElements, this.getPointMaxDt);
+            console.log(allElements);
 
             var elementWidth = options.width || element.clientWidth;
             var elementHeight = options.height || element.clientHeight;
@@ -166,6 +167,7 @@
 
             function zoomed() {
                 if (self.onVizChangeFn && d3.event) {
+                    console.log('here');
                     self.onVizChangeFn.call(self, {
                         scale: d3.event.scale,
                         translate: d3.event.translate,
@@ -239,7 +241,7 @@
         _createClass(TimelineChart, [{
             key: 'extendOptions',
             value: function extendOptions() {
-                var ext = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+                var ext = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
                 var defaultOptions = {
                     intervalMinWidth: 8, // px
